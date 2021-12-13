@@ -8,7 +8,7 @@ from database.lang_utils import get_message as gm
 from functions.decorators import authorized_only
 
 
-@Client.on_message(filters.command("userbotjoin"))
+@Client.on_message(filters.command("gel"))
 @authorized_only
 async def userbot_join(_, message: Message):
     chat_id = message.chat.id
@@ -31,7 +31,7 @@ async def userbot_join(_, message: Message):
         return await user.send_message(chat_id, gm(chat_id, "user_here"))
 
 
-@Client.on_message(filters.command("userbotleave"))
+@Client.on_message(filters.command("git"))
 @authorized_only
 async def userbot_leave_(_, message: Message):
     chat_id = message.chat.id
@@ -48,8 +48,8 @@ async def userbot_leave_(_, message: Message):
         )
 
 
-__cmds__ = ["userbotjoin", "userbotleave"]
+__cmds__ = ["gel", "git"]
 __help__ = {
-    "userbotjoin": "help_userbotjoin",
-    "userbotleave": "help_userbotleave"
+    "gel": "help_userbotjoin",
+    "git": "help_userbotleave"
 }
