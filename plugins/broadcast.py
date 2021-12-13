@@ -46,10 +46,3 @@ async def set_gcast_(_, message: Message):
         return await message.reply(gm(chat_id, "invalid_gcast_type"))
     key = ChatDB().set_gcast(chat_id, gcast_type)
     return await Bot().send_message(chat_id, key, gcast_type)
-
-
-__cmds__ = ["gcast", "setgcast"]
-__help__ = {
-    "gcast": "help_gcast",
-    "setgcast": "help_setgcast"
-}
