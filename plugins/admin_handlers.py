@@ -53,7 +53,7 @@ async def end_stream_(_, message: types.Message):
     return await Bot().send_message(chat_id, key, first_name)
 
 
-@Client.on_message(filters.command("restart") & filters.user(config.OWNER_ID))
+@Client.on_message(filters.command("reload") & filters.user(config.OWNER_ID))
 async def restart_bot_(client: Client, message: types.Message):
     chat_id = message.chat.id
     msg = await message.reply(gm(chat_id, "restart_bot"))
