@@ -18,36 +18,6 @@ def check_cmd(message: Message):
         cmd = ""
     return cmd
 
-
-@Client.on_message(filters.new_chat_members)
-async def new_member_(client: Client, message: Message):
-    assistant_username = (await user.get_me()).username
-    bot_id = (await client.get_me()).id
-    for member in message.new_chat_members:
-        if member.id == bot_id:
-            ChatDB().add_chat(message.chat.id)
-            return await message.reply(
-                "Hi, english is my default language.\n"
-                "make me as admin in here with all permissions except anonymous admin\n"
-                "btw, thanks for inviting me to here, to use me, please use /userbotjoin command first.\n"
-                "and for changing language, tap /lang to see all language that supported for me, "
-                "don't forget to subscribe our channel.",
-                reply_markup=MarkupKeyboard(
-                    [
-                        [
-                            ButtonKeyboard("Channel", url=config.CHANNEL_LINK),
-                            ButtonKeyboard("Support", url=config.GROUP_LINK),
-                        ],
-                        [
-                            ButtonKeyboard(
-                                "Assistant", url=f"https://t.me/{assistant_username}"
-                            )
-                        ],
-                    ]
-                ),
-            )
-
-
 @Client.on_message(filters.command("addchat"))
 @authorized_only
 async def add_chat_(_, message: Message):
