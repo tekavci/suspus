@@ -48,7 +48,7 @@ async def play_(_, message: types.Message):
     )
 
 
-@Client.on_message(filters.command("vplay") & filters.group)
+@Client.on_message(filters.command("vplasdasdasday") & filters.group)
 @only_admin
 async def vplay_(_, message: types.Message):
     chat_id = message.chat.id
