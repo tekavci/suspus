@@ -20,7 +20,7 @@ def extract_all(query: str, chat_id: int, user_id: int, status: str):
 
 
 @Client.on_message(filters.command("play") & filters.group)
-@only_admin
+@authorized_only
 async def play_(_, message: types.Message):
     reply = message.reply_to_message
     user_id = message.from_user.id
@@ -48,8 +48,8 @@ async def play_(_, message: types.Message):
     )
 
 
-@Client.on_message(filters.command("vplasdasdasday") & filters.group)
-@only_admin
+@Client.on_message(filters.command("netisplay") & filters.group)
+@authorized_only
 async def vplay_(_, message: types.Message):
     chat_id = message.chat.id
     user_id = message.from_user.id
