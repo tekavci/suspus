@@ -5,7 +5,7 @@ from database.lang_utils import get_message as gm
 from functions.lyrics_search import get_lyrics, get_artist, get_title, parse_url
 
 
-@Client.on_message(filters.command("lyrics"))
+@Client.on_message(filters.command("lyradafdafafaics"))
 async def _get_lyrics(_, message: Message):
     chat_id = message.chat.id
     if len(message.command) < 2:
